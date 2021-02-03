@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { InternetBillingComponent } from './Pages/internet-billing/internet-billing.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InternetBillingComponent,
   ],
   imports: [
     BrowserModule,
