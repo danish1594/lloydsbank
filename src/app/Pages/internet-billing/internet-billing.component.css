@@ -38,125 +38,44 @@ border: 1px solid #54a176;
  .p3{
 
     color:#288d54;
-   font-size: medium;
+   font-size: large;
 
   
  }
  table{
 
-    width: 840px;
-    margin:auto;
+
+    width:100%;
+    
  }
 
 
   th, td {
     border-bottom: 2px solid rgb(83, 78, 78);;
+    text-align:center;
 
-text-align:center;
-  }
+    
+
+
+    }
   
- .row1 th{
+th:first-child{
 
-    
-    padding:8px 0px 5px 0px;
-    font-weight:bold;
-    border-top:1px solid rgb(22, 19, 19); 
-    color:#288d54;
-    font-weight:auto;
- 
-    
-  }
+width:250px;
 
-  .date1{
+}
+  
+    .table-striped2 th{
+      color:#288d54;
 
+      border-top:  1px solid rgb(22, 19, 19); 
+    }
 
-    background-color:#c7d4e4;
-  }
-  .row2{
-
-
-    background-color:#c7d4e4;
-
-  }
-  .p4{
-    color:#288d54;
-    font-size: medium;
-
-  }
-  .row3 th{
-
-width:100px;
-padding:2px;
-color:#288d54;
-font-weight:auto;
-border-top:1px solid rgb(22, 19, 19);
-  }
-  .row4{
-
-    
-    background-color:#c7d4e4;
-  }
-  .date2{
-background-color:#c7d4e4;
-
-text-align: center;
-
-
-
-  }
-  .row5 th{
-    color:#288d54;
-    font-weight:auto;
-    border-top:1px solid rgb(22, 19, 19);
-    width:100px;
-    
-    padding:8px 0px 5px 0px;;
-  }
-  .p5{
+  
+   th{
 
 
     color:#288d54;
-    font-size: medium;
-  }
-  .date3{
-
-    background-color:#c7d4e4;
-  }
-  .row6{
-
-    
-    background-color:#c7d4e4;
-  }
-  .date4{
-
-    background-color:#c7d4e4;
-
-  }
-
-  .row8{
-
-
-    background-color:#c7d4e4;
-
-  }
-  .date5{
-
-    background-color:#c7d4e4;
-
-  }
-
-  .row10{
-    background-color:#c7d4e4;
-
-  }
-  .row11 th{
-
-
-    color:#288d54;
-    font-weight:auto;
-    border-top:1px solid rgb(22, 19, 19);
-    padding:6px 0px 5px 0px;;
-    width:30px;
     
   }
   .monthly-1 th{
@@ -167,50 +86,20 @@ text-align: center;
     color:#288d54;
     
   }
-  .date6{
+ 
+ 
 
-    background-color:#c7d4e4;
-
-
-  }
-  .row12{
-
-
-    background-color:#c7d4e4;
-  }
-  .row13{
-    
-    background-color:#c7d4e4;
-  }
-  .date7{
-     
-    background-color:#c7d4e4;
-  }
-  .row14{
-
-     
-    background-color:#c7d4e4;
-  }
-  .date8{
- background-color:#c7d4e4;
-
-  }
-  .row15{
-    background-color:#c7d4e4;
-
-  }
-
-  .row16 th{
+  .row2 th{
 
 
     color:#288d54;
     font-weight:auto;
     border-top:1px solid rgb(22, 19, 19);
-    padding:10px 0px 5px 0px;;
+    padding:8px 0px 5px 0px;;
     width:30px;
 
   }
-  .row17 th{
+  .row3 th{
 
     color:#288d54;
     font-weight:auto;
@@ -228,7 +117,7 @@ text-align: center;
     border-top:1px solid rgb(22, 19, 19);
     padding:2px 0px 5px 0px;;
   } 
- .row19{
+ .row1{
   background-color:#c7d4e4;
   
  }
@@ -237,3 +126,41 @@ text-align: center;
 
   font-weight:bold;
  }
+ .table-striped2 tr:nth-child(odd) {
+   background: #c7d4e4;;
+ }
+ .table-striped2 > tr:nth-child(odd) table tr:nth-child(even) {
+  background: #fff;
+}
+.table-striped2 > tr:nth-child(even) table tr:nth-child(odd) {
+  background: #c7d4e4;
+}
+ .table-striped2 tr:first-child {
+   background: initial;
+ }
+ .table-striped2 > tr > td:first-child {
+   background: #c7d4e4;
+ }
+ .table-striped2 table tr:last-child td {
+  border-bottom: none;
+}
+ .desc{
+
+  margin-top:10px;
+  font-style: italic;
+  color:rgb(85, 84, 84);
+  font-weight: 200;
+
+ }
+ .para{
+
+  color:rgb(85, 84, 84);
+  font-weight: 200; 
+ }
+ #no-border th{
+
+  border-top:white;
+ }
+ .nowrap {
+  white-space: nowrap ;
+}

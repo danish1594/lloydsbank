@@ -1,94 +1,95 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
-    href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&family=Raleway:wght@100;200&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;1,200;1,300&display=swap"
-    rel="stylesheet">
+  href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&family=Raleway:wght@100;200&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;1,200;1,300&display=swap"
+  rel="stylesheet">
 
 <section style="max-width:840px; margin: auto; overflow: hidden;">
-    <hr class="line1">
-    <h5 class="p0"> Savings rates</h5><br><br>
+  <hr class="line1">
+  <h5 class="p0"> Savings rates</h5><br><br>
 
-    <h1>SAVINGS RATES</h1>
-    <hr class="line2">
-    <h5 class="p1">Current rates for accounts open to new and existing customers</h5>
+  <h1>SAVINGS RATES</h1>
+  <hr class="line2">
+  <h5 class="p1">Current rates for accounts open to new and existing customers</h5>
 
-    <br>
+  <br>
 
-        <p class="p2">Your interest will be paid Gross, this means that we will not deduct tax automatically from your
-            interest. Depending on your personal<br>
+  <p class="p2">Your interest will be paid Gross, this means that we will not deduct tax automatically from your
+    interest. Depending on your personal<br>
 
-            circumstances, you may need to pay tax on the interest you earn and it will be your responsibility to pay
-            any tax you may owe to<br>
-            HM Revenue & Customs (HMRC).
-        </p>
-        
-    
-        
-            <h5 class="p3">Cash ISA Saver</h5>
-        
-    
+    circumstances, you may need to pay tax on the interest you earn and it will be your responsibility to pay
+    any tax you may owe to<br>
+    HM Revenue & Customs (HMRC).
+  </p>
 
-       
-    <table >
-        
-        <tr class="row1">
-          <th valign="bottom">Accounts opened between</th>
-          <th valign="bottom">Balance</th>
-          <th>Annual –<br>
-            Tax Free/AER</th>
-          <th valign="bottom">Qualifying Criteria</th>
-        </tr>
-        <tr>
-          <td class="date1">25/03/20 – current </td>
-          <td>£1+</td>
-          <td>0.05%</td>
-          <td>N/A</td>
-        </tr>
-        <tr class="row2">
+
+
+  <h5 class="p3">Cash ISA Saver</h5>
+
+
+
+
+  <table class="table-striped2">
+
+    <tr>
+      <th valign="bottom">Accounts opened between</th>
+      <th valign="bottom">Balance</th>
+      <th>Annual –<br>
+        Tax Free/AER</th>
+      <th valign="bottom">Qualifying Criteria</th>
+    </tr>
+    <tr *ngFor="let row of tableData.cashISA">
+      <td>{{row.time}} </td>
+      <td>{{row.balance}}</td>
+      <td>{{row.AER}}</td>
+      <td>{{row.QualifyingCriteria}}</td>
+    </tr>
+    <!--<tr class="row2">
           <td>04/07/19 – 24/03/20</td>
           <td>£1+</td>
           <td>0.05%</td>
           <td>N/A</td>
-        </tr>
-      </table>
-<br>
+        </tr>-->
+  </table>
+  <br>
 
-      <h5 class="p4">Child Saver</h5>
+  <h5 class="p3">Child Saver</h5>
 
-      <table >
-        
-        <tr class="row3">
-          <th>Accounts opened between</th>
-          <th>Balance</th>
-          <th>Gross</th>
-          <th>AER</th>
-        </tr>
-        <tr>
-          <td class="date2" rowspan="2">15/04/18 – current </td>
-          <td>Under £5,000</td>
-          <td>1.44%</td>
-          <td>1.45% </td>
-        </tr>
-        <tr class="row4">
-          <td>£5,000+ </td>
-          <td>0.01%</td>
-          <td>0.01%</td>
-        </tr>
-      </table><br>
-      <h5 class="p5">Club Lloyds Monthly Saver</h5>
-      <table >
-        
-        <tr class="row5">
-          <th valign="bottom">Accounts opened between</th>
-          <th valign="bottom">Balance</th>
-          <th>Annual
-            <br>Gross/AER</th>
-        </tr>
-        <tr>
-          <td class="date3">21/07/20 – current</td>
-          <td>£1+</td>
-          <td>1.50% </td>
-        </tr>
-        <tr class="row6">
+  <table class="table-striped2">
+
+    <tr>
+      <th>Accounts opened between</th>
+      <th>Balance</th>
+      <th>Gross</th>
+      <th>AER</th>
+    </tr>
+    <tr>
+      <td class="row1" rowspan="2"> 15/04/18 – current</td>
+      <td>Under £5,000</td>
+      <td>1.44%</td>
+      <td>1.45% </td>
+    </tr>
+    <tr>
+      <td>£5,000+ </td>
+      <td>0.01%</td>
+      <td>0.01%</td>
+    </tr>
+  </table><br>
+  <h5 class="p3">Club Lloyds Monthly Saver</h5>
+  <table class="table-striped2">
+
+    <tr>
+      <th valign="bottom">Accounts opened between</th>
+      <th valign="bottom">Balance</th>
+      <th>Annual
+        <br>Gross/AER
+      </th>
+    </tr>
+    <tr *ngFor="let club of tableData.ClubLloydsMonthlySaver; let i = index">
+      <td>{{club.time}}</td>
+      <td>{{club.balance}}</td>
+      <td>{{club.AER}}</td>
+    </tr>
+    <!-- <tr class="row6">
           <td>27/05/20 – 20/07/20</td>
           <td>£1+</td>
           <td>2.00%</td>
@@ -112,299 +113,835 @@
             <td>27/05/20 – 20/07/20</td>
             <td>£1+</td>
             <td>2.00%</td>
-          </tr>
-         
-      </table>
-<br><br>
+          </tr>-->
 
-<h5 class="p4">Club Lloyds Saver</h5>
+  </table>
+  <br><br>
+
+  <h5 class="p3">Club Lloyds Saver</h5>
+  <table>
+    <tr class="monthly-1">
+      <th></th>
+      <th></th>
+      <th>Annual</th>
+      <th colspan="2">Monthly</th>
+    </tr>
+    <tr>
+      <th valign="bottom">Accounts opened between</th>
+      <th valign="bottom">Balance</th>
+      <th>Gross/AER</th>
+      <th valign="bottom">Gross</th>
+      <th valign="bottom">AER</th>
+    </tr>
+    <tr>
+      <td class="row1" rowspan="2">09/04/20 – current </td>
+      <td> £25,000+ </td>
+      <td> 0.05% </td>
+      <td> 0.05% </td>
+      <td> 0.05% </td>
+    </tr>
+    <tr class="row1">
+
+      <td> £1 to £24,999 </td>
+      <td> 0.01% </td>
+      <td> 0.01% </td>
+      <td> 0.01% </td>
+    </tr>
+    <tr>
+      <td class="row1" rowspan="2">25/03/20 – 08/04/20</td>
+      <td> £25,000+ </td>
+      <td> 0.05% </td>
+      <td> 0.05% </td>
+      <td> 0.05% </td>
+    </tr>
+    <tr class="row1">
+      <td> £1 to £24,999 </td>
+      <td> 0.01% </td>
+      <td> 0.01% </td>
+      <td> 0.01% </td>
+    </tr>
+    <tr>
+      <td class="row1" rowspan="2">10/12/19 – 24/03/20</td>
+      <td> £25,000+ </td>
+      <td> 0.05% </td>
+      <td> 0.05% </td>
+      <td> 0.05% </td>
+    </tr>
+    <tr class="row1">
+      <td> £1 to £24,999 </td>
+      <td> 0.01% </td>
+      <td> 0.01% </td>
+      <td> 0.01% </td>
+    </tr>
+    <tr>
+      <td class="row1" rowspan="2">21/05/19 – 09/12/19</td>
+      <td> £25,000+ </td>
+      <td> 0.05% </td>
+      <td> 0.05% </td>
+      <td> 0.05% </td>
+    </tr>
+    <tr class="row1">
+      <td> £1 to £24,999 </td>
+      <td> 0.01% </td>
+      <td> 0.01% </td>
+      <td> 0.01% </td>
+    </tr>
+
+  </table>
+  <br>
+
+  <h5 class="p3">Easy Saver</h5>
+  <table>
+
+    <tr class="row2">
+      <th valign="bottom">Accounts opened between</th>
+      <th valign="bottom">Balance</th>
+      <th>Annual<br>
+        Gross/AER</th>
+      <th valign="bottom">Qualifying criteria</th>
+    </tr>
+    <tr>
+      <td class="row1">15/04/18 – current </td>
+      <td>Under £5,000</td>
+      <td>1.44%</td>
+      <td>1.45% </td>
+    </tr>
+
+  </table><br>
+
+
+  <h5 class="p3">Fixed Bond – 2 Year</h5>
+
+  <table>
+    <tr class="monthly-2">
+      <th></th>
+      <th></th>
+      <th>Annual</th>
+      <th colspan="2">Monthly</th>
+      <th></th>
+
+    </tr>
+    <tr class="row3">
+      <th width="180px">Accounts opened between</th>
+      <th width="190px">Balance</th>
+      <th> Gross/AER</th>
+      <th width="110px">Gross</th>
+      <th width="100px">AER</th>
+      <th width="160">Qualifying Criteria</th>
+
+
+    </tr>
+    <tr>
+      <td class="row1">21/07/20 – current</td>
+      <td>£1+</td>
+      <td class="bold">0.20%</td>
+      <td class="bold">0.20%</td>
+      <td class="bold">0.20%</td>
+      <td>N/A</td>
+
+    </tr>
+    <tr class="row1">
+      <td rowspan="2">09/06/20 – 20/07/20</td>
+      <td>£1+</td>
+      <td class="bold">0.30%</td>
+      <td class="bold">0.30%</td>
+      <td class="bold">0.30%</td>
+      <td>N/A</td>
+
+    </tr>
+    <tr>
+
+      <td>Rate 1</td>
+      <td class="bold">0.40%</td>
+      <td class="bold">0.40%</td>
+      <td class="bold">0.40%</td>
+      <td>You already hold either<br>
+        a Club Lloyds personal<br>
+        current account or<br>
+        a Wealth personal<br>
+        current account</td>
+
+
+    </tr>
+    <tr class="row1">
+      <td rowspan="2" class="row1">05/05/20 – 08/06/20</td>
+      <td>£1+</td>
+      <td class="bold">0.40%</td>
+      <td class="bold">0.40%</td>
+      <td class="bold">0.40%</td>
+      <td>N/A</td>
+
+
+
+    </tr>
+    <tr>
+
+      <td>£1+<br>Rate 1</td>
+      <td class="bold">0.60%</td>
+      <td class="bold">0.60%</td>
+      <td class="bold">0.60%</td>
+      <td>You already hold either<br>
+        a Club Lloyds personal<br>
+        current account or<br>
+        a Wealth personal<br>
+        current account</td>
+
+
+
+    </tr>
+
+    <tr class="row1">
+      <td>04/02/20 – 04/05/20</td>
+      <td>£1+</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>N/A</td>
+
+
+
+    </tr>
+
+
+    <tr>
+
+      <td class="row1">10/12/19 – 03/02/20</td>
+      <td>£1+</td>
+      <td class="bold">0.75%</td>
+      <td class="bold">0.75%</td>
+      <td class="bold">0.75%</td>
+      <td>N/A</td>
+    </tr>
+
+    <tr class="row1">
+      <td rowspan="2">23/07/19 – 09/12/19</td>
+      <td>£1+</td>
+      <td class="bold">0.55%</td>
+      <td class="bold">0.55%</td>
+      <td class="bold">0.55%</td>
+      <td>N/A</td>
+    </tr>
+
+    <tr>
+      <td>Rate 1</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>You already hold a<br>
+        Club Lloyds personal<br>
+        current account</td>
+
+
+
+    </tr>
+    <tr class="row1">
+
+      <td>02/10/18 – 22/07/19</td>
+      <td>£1+</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>N/A</td>
+
+
+
+    </tr>
+
+    <tr>
+      <td rowspan="2" class="row1">31/08/18 – 01/10/18</td>
+      <td>£1+</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>N/A</td>
+    </tr>
+    <tr class="row1">
+      <td>£1+<br>Rate1</td>
+      <td class="bold">0.90%</td>
+      <td class="bold">0.90%</td>
+      <td class="bold">0.90%</td>
+      <td>You hold a Club Lloyds<br>
+        personal current account</td>
+
+
+
+    </tr>
+
+
+    <tr>
+      <td class="row1">01/05/18 – 30/08/18</td>
+      <td>£1+</td>
+      <td class="bold">0.50%</td>
+      <td class="bold">0.50%</td>
+      <td class="bold">0.50%</td>
+      <td>N/A</td>
+
+
+
+    </tr>
+    <tr class="row1">
+      <td>04/10/16 – 25/09/17</td>
+      <td>£1+</td>
+      <td class="bold">0.55%</td>
+      <td class="bold">0.55%</td>
+      <td class="bold">0.55%</td>
+      <td>N/A</td>
+
+
+
+    </tr>
+
+    <tr>
+      <td class="row1">04/10/16 – 25/09/17</td>
+      <td>£1+</td>
+      <td class="bold">0.80%</td>
+      <td class="bold">0.80%</td>
+      <td class="bold">0.80%</td>
+      <td>N/A</td>
+
+
+
+    </tr>
+
+
+
+
+  </table>
+
+  <br><br>
+
+  <h5 class="p3">Fixed Rate Cash ISA – 2 Year</h5>
+
+  <table >
+    <tr class="monthly-2" >
+      <th></th>
+      <th></th>
+      <th>Annual</th>
+      <th colspan="2" width="40px">Monthly</th>
+      <th></th>
+
+    </tr>
+    <tr class="row3">
+      <th width="180px">Accounts opened between</th>
+      <th width="160px">Balance</th>
+      <th> Gross/AER</th>
+      <th width="110px">Gross</th>
+      <th width="100px">AER</th>
+      <th>Qualifying Criteria</th>
+
+    </tr>
+    <tr class="row1">
+      <td rowspan="2">09/06/20 – 20/07/20</td>
+      <td>£1+</td>
+      <td class="bold">0.30%</td>
+      <td class="bold">0.30%</td>
+      <td class="bold">0.30%</td>
+      <td>N/A</td>
+
+    </tr>
+    <tr>
+
+      <td>Rate 1</td>
+      <td class="bold">0.40%</td>
+      <td class="bold">0.40%</td>
+      <td class="bold">0.40%</td>
+      <td>You already hold either<br>
+        a Club Lloyds personal<br>
+        current account or<br>
+        a Wealth personal<br>
+        current account</td>
+
+
+    </tr>
+    <tr class="row1">
+      <td rowspan="2" class="row1">05/05/20 – 08/06/20</td>
+      <td>£1+</td>
+      <td class="bold">0.40%</td>
+      <td class="bold">0.40%</td>
+      <td class="bold">0.40%</td>
+      <td>N/A</td>
+
+
+
+    </tr>
+    <tr>
+
+      <td>£1+<br>Rate 1</td>
+      <td class="bold">0.60%</td>
+      <td class="bold">0.60%</td>
+      <td class="bold">0.60%</td>
+      <td>You already hold either<br>
+        a Club Lloyds personal<br>
+        current account or<br>
+        a Wealth personal<br>
+        current account</td>
+
+
+
+    </tr>
+
+    <tr class="row1">
+      <td>04/02/20 – 04/05/20</td>
+      <td>£1+</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>N/A</td>
+
+
+
+    </tr>
+
+
+    <tr>
+
+      <td class="row1">10/12/19 – 03/02/20</td>
+      <td>£1+</td>
+      <td class="bold">0.75%</td>
+      <td class="bold">0.75%</td>
+      <td class="bold">0.75%</td>
+      <td>N/A</td>
+    </tr>
+
+    <tr class="row1">
+      <td rowspan="2">23/07/19 – 09/12/19</td>
+      <td>£1+</td>
+      <td class="bold">0.55%</td>
+      <td class="bold">0.55%</td>
+      <td class="bold">0.55%</td>
+      <td>N/A</td>
+    </tr>
+
+
+    <tr>
+      <td>Rate 1</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>You already hold a<br>
+        Club Lloyds personal<br>
+        current account</td>
+
+
+
+    </tr>
+    <tr class="row1">
+
+      <td>02/10/18 – 22/07/19</td>
+      <td>£1+</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>N/A</td>
+
+
+
+    </tr>
+
+
+    <tr>
+      <td rowspan="2" class="row1">31/08/18 – 01/10/18</td>
+      <td>£1+</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>N/A</td>
+    </tr>
+
+
+    <tr class="row1">
+      <td>£1+<br>Rate1</td>
+      <td class="bold">0.90%</td>
+      <td class="bold">0.90%</td>
+      <td class="bold">0.90%</td>
+      <td>You hold a Club Lloyds<br>
+        personal current account</td>
+    </tr>
+
+
+
+
+
+    <tr>
+      <td class="row1">04/10/16 – 25/09/17</td>
+      <td>£1+</td>
+      <td class="bold">0.55%</td>
+      <td class="bold">0.55%</td>
+      <td class="bold">0.55%</td>
+      <td>N/A</td>
+
+
+
+    </tr>
+
+    <tr class="row1">
+      <td rowspan="2" class="row1">31/08/18 – 01/10/18</td>
+      <td>£1+</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>N/A</td>
+    </tr>
+
+
+    <tr>
+      <td>£1+<br>Rate1</td>
+      <td class="bold">0.90%</td>
+      <td class="bold">0.90%</td>
+      <td class="bold">0.90%</td>
+      <td>You hold a Club Lloyds<br>
+        personal current account</td>
+    </tr>
+
+    <tr class="row1">
+      <td>04/10/16 – 25/09/17</td>
+      <td>£1+</td>
+      <td class="bold">0.80%</td>
+      <td class="bold">0.80%</td>
+      <td class="bold">0.80%</td>
+      <td>N/A</td>
+
+
+
+    </tr>
+    <tr>
+      <td rowspan="2" class="row1">31/08/18 – 01/10/18</td>
+      <td>£1+</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>N/A</td>
+    </tr>
+    <tr class="row1">
+      <td>£1+<br>Rate1</td>
+      <td class="bold">0.90%</td>
+      <td class="bold">0.90%</td>
+      <td class="bold">0.90%</td>
+      <td>You hold a Club Lloyds<br>
+        personal current account</td>
+    </tr>
+    <tr>
+      <td class="row1">04/10/16 – 25/09/17</td>
+      <td>£1+</td>
+      <td class="bold">0.55%</td>
+      <td class="bold">0.55%</td>
+      <td class="bold">0.55%</td>
+      <td>N/A</td>
+    </tr>
+    <tr class="row1">
+      <td rowspan="2">31/08/18 – 01/10/18</td>
+      <td>£1+</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>£1+<br>Rate1</td>
+      <td class="bold">0.90%</td>
+      <td class="bold">0.90%</td>
+      <td class="bold">0.90%</td>
+      <td>You hold a Club Lloyds<br>
+        personal current account</td>
+    </tr>
+
+    <tr class="row1">
+
+      <td>02/10/18 – 22/07/19</td>
+      <td>£1+</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>N/A</td>
+    </tr>
+
+    <tr>
+      <td class="row1">04/10/16 – 25/09/17</td>
+      <td>£1+</td>
+      <td class="bold">0.55%</td>
+      <td class="bold">0.55%</td>
+      <td class="bold">0.55%</td>
+      <td>N/A</td>
+    </tr>
+    <tr class="row1">
+      <td rowspan="2" class="row1">31/08/18 – 01/10/18</td>
+      <td>£1+</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>£1+<br>Rate1</td>
+      <td class="bold">0.90%</td>
+      <td class="bold">0.90%</td>
+      <td class="bold">0.90%</td>
+      <td>You hold a Club Lloyds<br>
+        personal current account</td>
+    </tr>
+
+    <tr class="row1">
+
+      <td>02/10/18 – 22/07/19</td>
+      <td>£1+</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+
+      <td class="row1">02/10/18 – 22/07/19</td>
+      <td>£1+</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td class="bold">0.65%</td>
+      <td>N/A</td>
+    </tr>-->
+  </table>
+  <h6 class="desc"> You must have held the qualifying account for at least 7 days. We may remove preferential offers at
+    any time. </h6>
+
+
+  <br>
+
+
+  <h5 class="p3">Help to Buy: ISA</h5>
+  <h6 class="para">The government’s Help to Buy: ISA scheme was available to new savers up to the 30 November 2019. New
+    accounts are now only available for transfers in from
+    customers with an existing Help to Buy: ISA with another provider and for Lloyds Bank customers whose house purchase
+    falls through and ask us to reinstate
+    their accounts</h6>
+
+  <table>
+
+    <tr class="monthly-1">
+      <th></th>
+      <th></th>
+      <th>Annual</th>
+    </tr>
+    <tr>
+      <th>Accounts opened between</th>
+      <th width="290px">Balance</th>
+      <th>Gross/AER</th>
+
+
+
+    </tr>
+
+    <tr >
+      <td rowspan="2" class="row1">08/12/20 – current</td>
+      <td>£1–£12,000</td>
+      <td class="bold">0.75%</td>
+    
+    </tr>
+    <tr class="row1">
+      <td>Any excess above £12,000</td>
+      <td class="bold">0.05%</td>
+   
+    </tr>
+
+
+    <tr >
+      <td rowspan="2" class="row1">14/10/20 – 07/12/20</td>
+      <td>£1–£12,000</td>
+      <td class="bold">0.95%</td>
+    
+    </tr>
+    <tr class="row1">
+      <td>Any excess above £12,000</td>
+      <td class="bold">0.05%</td>
+   
+    </tr>
+
+
+
+
+    
+    <tr >
+      <td class="row1">01/12/15 – 13/10/20</td>
+      <td>£1+</td>
+      <td class="bold">0.95%</td>
+    
+    </tr>
+
+</table><br><br>
+
 <table>
+
+  
+  <h5 class="p3">Junior Cash ISA</h5>
   <tr class="monthly-1">
     <th></th>
     <th></th>
     <th>Annual</th>
-    <th colspan="2">Monthly</th>
-  </tr>
-<tr class="row11">
-  <th valign="bottom">Accounts opened between</th>
-  <th valign="bottom">Balance</th>
-  <th>Gross/AER</th>
-    <th valign="bottom">Gross</th>
-    <th valign="bottom">AER</th>
-</tr>
-<tr>
-  <td class="date6" rowspan="2">09/04/20 – current </td>
-  <td> £25,000+ </td>
-  <td> 0.05% </td>
-  <td> 0.05% </td>
-  <td > 0.05% </td>
-</tr>
-<tr class="row12">
-  
-  <td> £1 to £24,999 </td>
-  <td> 0.01% </td>
-  <td> 0.01% </td>
-  <td> 0.01% </td>
-</tr>
-<tr>
-  <td class="date6" rowspan="2">25/03/20 – 08/04/20</td>
-  <td> £25,000+ </td>
-    <td> 0.05% </td>
-    <td> 0.05% </td>
-    <td > 0.05% </td>
-  </tr>
-  <tr class="row13">
-    <td> £1 to £24,999 </td>
-  <td> 0.01% </td>
-  <td> 0.01% </td>
-  <td> 0.01% </td>
-  </tr>
-  <tr >
-    <td class="date6" rowspan="2">10/12/19 – 24/03/20</td>
-    <td> £25,000+ </td>
-    <td> 0.05% </td>
-    <td> 0.05% </td>
-    <td > 0.05% </td>
-  </tr>
-  <tr class="row14">
-    <td> £1 to £24,999 </td>
-    <td> 0.01% </td>
-    <td> 0.01% </td>
-    <td> 0.01% </td>
-  </tr>
-  <tr >
-    <td class="date6" rowspan="2">21/05/19 – 09/12/19</td>
-    <td> £25,000+ </td>
-    <td> 0.05% </td>
-    <td> 0.05% </td>
-    <td > 0.05% </td>
-  </tr>
-  <tr class="row15">
-    <td> £1 to £24,999 </td>
-    <td> 0.01% </td>
-    <td> 0.01% </td>
-    <td> 0.01% </td>
-  </tr>
- 
-</table>
-<br>
-
-<h5 class="p4">Easy Saver</h5>
-<table >
-        
-  <tr class="row16">
-    <th valign="bottom">Accounts opened between</th>
-    <th valign="bottom">Balance</th>
-    <th>Annual<br>
-      Gross/AER</th>
-    <th valign="bottom">Qualifying criteria</th>
   </tr>
   <tr>
-    <td class="date2">15/04/18 – current </td>
-    <td>Under £5,000</td>
-    <td>1.44%</td>
-    <td>1.45% </td>
+    <th>Accounts opened between</th>
+    <th width="290px">Balance</th>
+    <th>Gross/AER</th>
+
+
+
   </tr>
- 
-</table><br>
 
 
-<h5 class="p4">Fixed Bond – 2 Year</h5>
+<tr>
+  <td class="row1">08/12/20 – current</td>
+  <td>£1+</td>
+  <td class="bold">1.50%</td>
 
+</tr>
+
+<tr class="row1">
+  <td >23/02/12 – 07/12/20</td>
+  <td>£1+</td>
+  <td class="bold">1.95%</td>
+
+</tr>
+
+
+
+
+
+
+
+
+
+</table>
+
+
+  <br>
+
+  <table>
+
+    <h5 class="p3 nowrap">Lend a Hand Fixed Savings  Account – 3 Year</h5>
+    <tr class="monthly-1">
+      <th></th>
+      <th></th>
+      <th>Annual</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>Accounts opened between</th>
+      <th width="50px">Balance</th>
+      <th width="250px">Gross/AER</th>
+      <th width="250px">Qualifying Criteria</th>
+
+
+
+    </tr>
+
+    <tr>
+      <td class="row1">29/10/20 – current</td> 
+      <td>£1+</td> 
+      <td class="bold">1.65%</td> 
+       <td rowspan="2" class="bold">This account is only<br>
+        available to support a <br>
+        Lend a Hand Mortgage</td> </tr>
+<tr class="row1">
+
+
+  <td>28/01/2019 – 28/10/20</td> 
+  <td >£1+</td> 
+  <td class="bold">2.50%</td> 
+  
+</tr>
+
+
+
+
+
+
+
+
+
+
+  </table>
+
+<br>
+<br>
+
+
+<h5 class="p3">Monthly Saver</h5> 
 <table>
-  <tr class="monthly-2">
-<th></th>
-<th></th>
-<th>Annual</th>
-<th colspan="2">Monthly</th>
-<th></th>
 
-</tr>
-<tr class="row17">
-  <th width="180px" >Accounts opened between</th>
-  <th width="170px">Balance</th>
-  <th  > Gross/AER</th>
-    <th width="110px" >Gross</th>
-    <th width="100px" >AER</th>
-    <th >Qualifying Criteria</th>
-
-
-  </tr>
-  <tr class="row18">
-<td class="date2">21/07/20 – current</td>
-<td>£1+</td>
-<td class="bold">0.20%</td>
-<td class="bold">0.20%</td>
-<td class="bold">0.20%</td>
-<td>N/A</td>
-
-</tr>
-<tr class="row19">
-  <td rowspan="2">09/06/20 – 20/07/20</td>
-  <td >£1+</td>
-  <td class="bold">0.30%</td>
-  <td class="bold">0.30%</td>
-  <td class="bold">0.30%</td>
-  <td>N/A</td>
+<tr class="monthly-1">
+  <th></th>
+  <th></th>
+  <th>Annual</th>
 
 </tr>
 <tr>
- 
-  <td>Rate 1</td>
-  <td class="bold">0.40%</td>
-  <td class="bold">0.40%</td>
-  <td class="bold">0.40%</td>
-  <td>You already hold either<br>
-    a Club Lloyds personal<br>
-    current account or<br>
-    a Wealth personal<br>
-    current account</td>
+  <th>Accounts opened between</th>
+  <th width="290px">Balance</th>
+  <th>Gross/AER</th>
+ </tr>
+ <tr>
 
 
+  <td  class="row1">21/07/20 – current</td> 
+  <td >£1+</td> 
+  <td class="bold">1.00%</td> 
+  
 </tr>
-<tr class="row19">
-  <td rowspan="2" class="date2">05/05/20 – 08/06/20</td>
-  <td >£1+</td>
-  <td class="bold">0.40%</td>
-  <td class="bold">0.40%</td>
-  <td class="bold">0.40%</td>
-  <td>N/A</td>
+<tr class="row1">
 
 
-
+  <td  >27/05/20 – 20/07/20</td> 
+  <td >£1+</td> 
+  <td class="bold">1.50%</td> 
+  
 </tr>
 <tr>
 
-  <td>£1+<br>Rate 1</td>
-  <td class="bold">0.60%</td>
-  <td class="bold">0.60%</td>
-  <td class="bold">0.60%</td>
-  <td>You already hold either<br>
-    a Club Lloyds personal<br>
-    current account or<br>
-    a Wealth personal<br>
-    current account</td>
 
-
-
+  <td  class="row1">30/10/18 – 26/05/20</td> 
+  <td >£1+</td> 
+  <td class="bold">2.00%</td> 
+  
 </tr>
-
-<tr class="row19">
-<td>04/02/20 – 04/05/20</td>
-  <td>£1+</td>
-  <td class="bold">0.65%</td>
-  <td class="bold">0.65%</td>
-  <td class="bold">0.65%</td>
-  <td>N/A</td>
+<tr class="row1">
 
 
-
+  <td  >01/12/17 – 29/10/18</td> 
+  <td >£1+</td> 
+  <td class="bold">2.50%</td> 
+  
 </tr>
-
-
 <tr>
 
-  <td class="date2">10/12/19 – 03/02/20</td>
-  <td>£1+</td>
-  <td class="bold">0.75%</td>
-  <td class="bold">0.75%</td>
-  <td class="bold">0.75%</td>
-  <td>N/A</td>
+
+  <td  class="row1">10/12/13 – 30/11/17</td> 
+  <td >£1+</td> 
+  <td class="bold">2.00%</td> 
+  
 </tr>
+</table><br><br>
 
-<tr class="row19">
-  <td  rowspan="2">23/07/19 – 09/12/19</td>
-  <td>£1+</td>
-  <td class="bold">0.55%</td>
-  <td class="bold">0.55%</td>
-  <td class="bold">0.55%</td>
-  <td>N/A</td>
-</tr>
+<h5 class="p3">Online Fixed Bond – 2 Year</h5>
+<table>
 
-<tr>
-  <td>Rate 1</td>
-  <td class="bold">0.65%</td>
-  <td class="bold">0.65%</td>
-  <td class="bold">0.65%</td>
-  <td>You already hold a<br>
-    Club Lloyds personal<br>
-    current account</td>
+    <tr class="monthly-1">
+      <th></th>
+      <th></th>
+      <th>Annual</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>Accounts opened between</th>
+      <th width="180px">Balance</th>
+      <th width="250px">Gross/AER</th>
+      <th width="">Qualifying Criteria</th>
 
 
 
-</tr>
-<tr class="row19">
-
-  <td>02/10/18 – 22/07/19</td>
-  <td>£1+</td>
-  <td class="bold">0.65%</td>
-  <td class="bold">0.65%</td>
-  <td class="bold">0.65%</td>
-  <td>N/A</td>
-
-
-
-</tr>
-
-<tr>
-  <td rowspan="2" class="date2">31/08/18 – 01/10/18</td>
-  <td>£1+</td>
-  <td class="bold">0.65%</td>
-  <td class="bold">0.65%</td>
-  <td class="bold">0.65%</td>
-  <td>N/A</td>
-</tr>
-<tr class="row19">
-  <td>£1+<br>Rate1</td>
-  <td class="bold">0.90%</td>
-  <td class="bold">0.90%</td>
-  <td class="bold">0.90%</td>
-  <td>You hold a Club Lloyds<br>
-    personal current account</td>
-
-
-
-</tr>
-
-
-<tr >
-  <td class="date2">01/05/18 – 30/08/18</td>
-  <td>£1+</td>
-  <td class="bold">0.50%</td>
-  <td class="bold">0.50%</td>
-  <td class="bold">0.50%</td>
-  <td>N/A</td>
-
-
-
-</tr>
-<tr class="row19">
-  <td >04/10/16 – 25/09/17</td>
-  <td>£1+</td>
-  <td class="bold">0.55%</td>
-  <td class="bold">0.55%</td>
-  <td class="bold">0.55%</td>
-  <td>N/A</td>
-
-
-
-</tr>
-
-<tr>
-  <td class="date2">04/10/16 – 25/09/17</td>
-  <td>£1+</td>
-  <td class="bold">0.80%</td>
-  <td class="bold">0.80%</td>
-  <td class="bold">0.80%</td>
-  <td>N/A</td>
-
-
-
-</tr>
+    </tr>
 
 
 
 
-</table> <br><br>
+
+</table>
 
 </section>
