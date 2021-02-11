@@ -43,12 +43,7 @@
       <td>{{row.AER}}</td>
       <td>{{row.QualifyingCriteria}}</td>
     </tr>
-    <!--<tr class="row2">
-          <td>04/07/19 – 24/03/20</td>
-          <td>£1+</td>
-          <td>0.05%</td>
-          <td>N/A</td>
-        </tr>-->
+    
   </table>
   <br>
 
@@ -62,17 +57,24 @@
       <th>Gross</th>
       <th>AER</th>
     </tr>
-    <tr>
-      <td class="row1" rowspan="2"> 15/04/18 – current</td>
-      <td>Under £5,000</td>
-      <td>1.44%</td>
-      <td>1.45% </td>
-    </tr>
-    <tr>
-      <td>£5,000+ </td>
-      <td>0.01%</td>
-      <td>0.01%</td>
-    </tr>
+    <ng-container *ngFor="let row of tableData.ChildSaver">
+      <tr>
+        <td [attr.rowspan]="row.data.length">{{row.heading}}</td>
+        <td>{{row.data[0].balance}}</td>
+        <td>{{row.data[0].Gross }}</td>
+        <td>{{row.data[0].AER}}</td>
+       
+      </tr>
+
+      <ng-container *ngFor="let row2 of row.data; let i = index">
+        <tr *ngIf="i != 0">
+          <td>{{row2.balance}}</td>
+          <td class="bold">{{row2.Gross}}</td>
+          <td class="bold">{{row2.AER}}</td>
+     
+        </tr>
+      </ng-container>
+    </ng-container>
   </table><br>
   <h5 class="p3">Club Lloyds Monthly Saver</h5>
   <table class="table-striped2">
@@ -89,37 +91,13 @@
       <td>{{club.balance}}</td>
       <td>{{club.AER}}</td>
     </tr>
-    <!-- <tr class="row6">
-          <td>27/05/20 – 20/07/20</td>
-          <td>£1+</td>
-          <td>2.00%</td>
-        </tr>
-        <tr class="row7">
-            <td class="date4">27/05/20 – 20/07/20</td>
-            <td>£1+</td>
-            <td>2.00%</td>
-          </tr>
-          <tr class="row8">
-            <td>27/05/20 – 20/07/20</td>
-            <td>£1+</td>
-            <td>2.00%</td>
-          </tr>
-          <tr class="row9">
-            <td class="date5">27/05/20 – 20/07/20</td>
-            <td>£1+</td>
-            <td>2.00%</td>
-          </tr>
-          <tr class="row10">
-            <td>27/05/20 – 20/07/20</td>
-            <td>£1+</td>
-            <td>2.00%</td>
-          </tr>-->
+
 
   </table>
   <br><br>
 
   <h5 class="p3">Club Lloyds Saver</h5>
-  <table>
+  <table class="table-striped2">
     <tr class="monthly-1">
       <th></th>
       <th></th>
@@ -133,78 +111,45 @@
       <th valign="bottom">Gross</th>
       <th valign="bottom">AER</th>
     </tr>
-    <tr>
-      <td class="row1" rowspan="2">09/04/20 – current </td>
-      <td> £25,000+ </td>
-      <td> 0.05% </td>
-      <td> 0.05% </td>
-      <td> 0.05% </td>
-    </tr>
-    <tr class="row1">
+    <ng-container *ngFor="let row of tableData.LloydsSaver">
+      <tr>
+        <td [attr.rowspan]="row.data.length">{{row.heading}}</td>
+        <td>{{row.data[0].balance}}</td>
+        <td>{{row.data[0].AnnualAER}}</td>
+        <td>{{row.data[0].Gross }}</td>
+        <td>{{row.data[0].AER}}</td>
+       
+      </tr>
 
-      <td> £1 to £24,999 </td>
-      <td> 0.01% </td>
-      <td> 0.01% </td>
-      <td> 0.01% </td>
-    </tr>
-    <tr>
-      <td class="row1" rowspan="2">25/03/20 – 08/04/20</td>
-      <td> £25,000+ </td>
-      <td> 0.05% </td>
-      <td> 0.05% </td>
-      <td> 0.05% </td>
-    </tr>
-    <tr class="row1">
-      <td> £1 to £24,999 </td>
-      <td> 0.01% </td>
-      <td> 0.01% </td>
-      <td> 0.01% </td>
-    </tr>
-    <tr>
-      <td class="row1" rowspan="2">10/12/19 – 24/03/20</td>
-      <td> £25,000+ </td>
-      <td> 0.05% </td>
-      <td> 0.05% </td>
-      <td> 0.05% </td>
-    </tr>
-    <tr class="row1">
-      <td> £1 to £24,999 </td>
-      <td> 0.01% </td>
-      <td> 0.01% </td>
-      <td> 0.01% </td>
-    </tr>
-    <tr>
-      <td class="row1" rowspan="2">21/05/19 – 09/12/19</td>
-      <td> £25,000+ </td>
-      <td> 0.05% </td>
-      <td> 0.05% </td>
-      <td> 0.05% </td>
-    </tr>
-    <tr class="row1">
-      <td> £1 to £24,999 </td>
-      <td> 0.01% </td>
-      <td> 0.01% </td>
-      <td> 0.01% </td>
-    </tr>
-
+      <ng-container *ngFor="let row2 of row.data; let i = index">
+        <tr *ngIf="i != 0">
+          <td>{{row2.balance}}</td>
+          <td class="bold">{{row2.AnnualAER}}</td>
+          <td class="bold">{{row2.Gross}}</td>
+          <td class="bold">{{row2.AER}}</td>
+     
+        </tr>
+      </ng-container>
+    </ng-container>
   </table>
+
   <br>
 
   <h5 class="p3">Easy Saver</h5>
-  <table>
+  <table class="table-striped2">
 
-    <tr class="row2">
+    <tr class="margin-top">
       <th valign="bottom">Accounts opened between</th>
       <th valign="bottom">Balance</th>
       <th>Annual<br>
         Gross/AER</th>
       <th valign="bottom">Qualifying criteria</th>
     </tr>
-    <tr>
-      <td class="row1">15/04/18 – current </td>
-      <td>Under £5,000</td>
-      <td>1.44%</td>
-      <td>1.45% </td>
+    <tr *ngFor="let row of tableData.EasySaver; let i = index">
+      <td>{{row.time}}</td>
+      <td>{{row.balance}}</td>
+      <td>{{row.AER}}</td>
+      <td>{{row.QualifyingCriteria}}</td>
     </tr>
 
   </table><br>
@@ -212,7 +157,7 @@
 
   <h5 class="p3">Fixed Bond – 2 Year</h5>
 
-  <table>
+  <table class="table-striped2">
     <tr class="monthly-2">
       <th></th>
       <th></th>
@@ -221,7 +166,7 @@
       <th></th>
 
     </tr>
-    <tr class="row3">
+    <tr class="row3 no-border">
       <th width="180px">Accounts opened between</th>
       <th width="190px">Balance</th>
       <th> Gross/AER</th>
@@ -231,178 +176,28 @@
 
 
     </tr>
-    <tr>
-      <td class="row1">21/07/20 – current</td>
-      <td>£1+</td>
-      <td class="bold">0.20%</td>
-      <td class="bold">0.20%</td>
-      <td class="bold">0.20%</td>
-      <td>N/A</td>
-
-    </tr>
-    <tr class="row1">
-      <td rowspan="2">09/06/20 – 20/07/20</td>
-      <td>£1+</td>
-      <td class="bold">0.30%</td>
-      <td class="bold">0.30%</td>
-      <td class="bold">0.30%</td>
-      <td>N/A</td>
-
-    </tr>
-    <tr>
-
-      <td>Rate 1</td>
-      <td class="bold">0.40%</td>
-      <td class="bold">0.40%</td>
-      <td class="bold">0.40%</td>
-      <td>You already hold either<br>
-        a Club Lloyds personal<br>
-        current account or<br>
-        a Wealth personal<br>
-        current account</td>
 
 
-    </tr>
-    <tr class="row1">
-      <td rowspan="2" class="row1">05/05/20 – 08/06/20</td>
-      <td>£1+</td>
-      <td class="bold">0.40%</td>
-      <td class="bold">0.40%</td>
-      <td class="bold">0.40%</td>
-      <td>N/A</td>
+    <ng-container *ngFor="let row of tableData.FixedBondTwoYear">
+      <tr>
+        <td [attr.rowspan]="row.data.length">{{row.heading}}</td>
+        <td>{{row.data[0].balance}}</td>
+        <td class="bold">{{row.data[0].AnnualAER}}</td>
+        <td class="bold">{{row.data[0].Gross }}</td>
+        <td class="bold">{{row.data[0].AER}}</td>
+        <td >{{row.data[0].qualifyingcriteria}}</td>
+      </tr>
 
-
-
-    </tr>
-    <tr>
-
-      <td>£1+<br>Rate 1</td>
-      <td class="bold">0.60%</td>
-      <td class="bold">0.60%</td>
-      <td class="bold">0.60%</td>
-      <td>You already hold either<br>
-        a Club Lloyds personal<br>
-        current account or<br>
-        a Wealth personal<br>
-        current account</td>
-
-
-
-    </tr>
-
-    <tr class="row1">
-      <td>04/02/20 – 04/05/20</td>
-      <td>£1+</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>N/A</td>
-
-
-
-    </tr>
-
-
-    <tr>
-
-      <td class="row1">10/12/19 – 03/02/20</td>
-      <td>£1+</td>
-      <td class="bold">0.75%</td>
-      <td class="bold">0.75%</td>
-      <td class="bold">0.75%</td>
-      <td>N/A</td>
-    </tr>
-
-    <tr class="row1">
-      <td rowspan="2">23/07/19 – 09/12/19</td>
-      <td>£1+</td>
-      <td class="bold">0.55%</td>
-      <td class="bold">0.55%</td>
-      <td class="bold">0.55%</td>
-      <td>N/A</td>
-    </tr>
-
-    <tr>
-      <td>Rate 1</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>You already hold a<br>
-        Club Lloyds personal<br>
-        current account</td>
-
-
-
-    </tr>
-    <tr class="row1">
-
-      <td>02/10/18 – 22/07/19</td>
-      <td>£1+</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>N/A</td>
-
-
-
-    </tr>
-
-    <tr>
-      <td rowspan="2" class="row1">31/08/18 – 01/10/18</td>
-      <td>£1+</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>N/A</td>
-    </tr>
-    <tr class="row1">
-      <td>£1+<br>Rate1</td>
-      <td class="bold">0.90%</td>
-      <td class="bold">0.90%</td>
-      <td class="bold">0.90%</td>
-      <td>You hold a Club Lloyds<br>
-        personal current account</td>
-
-
-
-    </tr>
-
-
-    <tr>
-      <td class="row1">01/05/18 – 30/08/18</td>
-      <td>£1+</td>
-      <td class="bold">0.50%</td>
-      <td class="bold">0.50%</td>
-      <td class="bold">0.50%</td>
-      <td>N/A</td>
-
-
-
-    </tr>
-    <tr class="row1">
-      <td>04/10/16 – 25/09/17</td>
-      <td>£1+</td>
-      <td class="bold">0.55%</td>
-      <td class="bold">0.55%</td>
-      <td class="bold">0.55%</td>
-      <td>N/A</td>
-
-
-
-    </tr>
-
-    <tr>
-      <td class="row1">04/10/16 – 25/09/17</td>
-      <td>£1+</td>
-      <td class="bold">0.80%</td>
-      <td class="bold">0.80%</td>
-      <td class="bold">0.80%</td>
-      <td>N/A</td>
-
-
-
-    </tr>
-
+      <ng-container *ngFor="let row2 of row.data; let i = index">
+        <tr *ngIf="i != 0">
+          <td>{{row2.balance}}</td>
+          <td class="bold">{{row2.AnnualAER}}</td>
+          <td class="bold">{{row2.Gross}}</td>
+          <td class="bold">{{row2.AER}}</td>
+          <td>{{row2.qualifyingcriteria}}</td>
+        </tr>
+      </ng-container>
+    </ng-container>
 
 
 
@@ -412,8 +207,8 @@
 
   <h5 class="p3">Fixed Rate Cash ISA – 2 Year</h5>
 
-  <table >
-    <tr class="monthly-2" >
+  <table class="table-striped2">
+    <tr class="monthly-2">
       <th></th>
       <th></th>
       <th>Annual</th>
@@ -421,7 +216,7 @@
       <th></th>
 
     </tr>
-    <tr class="row3">
+    <tr class="no-border">
       <th width="180px">Accounts opened between</th>
       <th width="160px">Balance</th>
       <th> Gross/AER</th>
@@ -430,274 +225,27 @@
       <th>Qualifying Criteria</th>
 
     </tr>
-    <tr class="row1">
-      <td rowspan="2">09/06/20 – 20/07/20</td>
-      <td>£1+</td>
-      <td class="bold">0.30%</td>
-      <td class="bold">0.30%</td>
-      <td class="bold">0.30%</td>
-      <td>N/A</td>
+    <ng-container *ngFor="let row of tableData.FixedRateCashISA">
+      <tr>
+        <td [attr.rowspan]="row.data.length">{{row.heading}}</td>
+        <td>{{row.data[0].balance}}</td>
+        <td class="bold">{{row.data[0].TaxFreeAER}}</td>
+        <td class="bold">{{row.data[0].TaxFree}}</td>
+        <td>{{row.data[0].AER}}</td>
+        <td class="bold">{{row.data[0].QualifyingCriteria}}</td>
+      </tr>
 
-    </tr>
-    <tr>
-
-      <td>Rate 1</td>
-      <td class="bold">0.40%</td>
-      <td class="bold">0.40%</td>
-      <td class="bold">0.40%</td>
-      <td>You already hold either<br>
-        a Club Lloyds personal<br>
-        current account or<br>
-        a Wealth personal<br>
-        current account</td>
-
-
-    </tr>
-    <tr class="row1">
-      <td rowspan="2" class="row1">05/05/20 – 08/06/20</td>
-      <td>£1+</td>
-      <td class="bold">0.40%</td>
-      <td class="bold">0.40%</td>
-      <td class="bold">0.40%</td>
-      <td>N/A</td>
-
-
-
-    </tr>
-    <tr>
-
-      <td>£1+<br>Rate 1</td>
-      <td class="bold">0.60%</td>
-      <td class="bold">0.60%</td>
-      <td class="bold">0.60%</td>
-      <td>You already hold either<br>
-        a Club Lloyds personal<br>
-        current account or<br>
-        a Wealth personal<br>
-        current account</td>
-
-
-
-    </tr>
-
-    <tr class="row1">
-      <td>04/02/20 – 04/05/20</td>
-      <td>£1+</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>N/A</td>
-
-
-
-    </tr>
-
-
-    <tr>
-
-      <td class="row1">10/12/19 – 03/02/20</td>
-      <td>£1+</td>
-      <td class="bold">0.75%</td>
-      <td class="bold">0.75%</td>
-      <td class="bold">0.75%</td>
-      <td>N/A</td>
-    </tr>
-
-    <tr class="row1">
-      <td rowspan="2">23/07/19 – 09/12/19</td>
-      <td>£1+</td>
-      <td class="bold">0.55%</td>
-      <td class="bold">0.55%</td>
-      <td class="bold">0.55%</td>
-      <td>N/A</td>
-    </tr>
-
-
-    <tr>
-      <td>Rate 1</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>You already hold a<br>
-        Club Lloyds personal<br>
-        current account</td>
-
-
-
-    </tr>
-    <tr class="row1">
-
-      <td>02/10/18 – 22/07/19</td>
-      <td>£1+</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>N/A</td>
-
-
-
-    </tr>
-
-
-    <tr>
-      <td rowspan="2" class="row1">31/08/18 – 01/10/18</td>
-      <td>£1+</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>N/A</td>
-    </tr>
-
-
-    <tr class="row1">
-      <td>£1+<br>Rate1</td>
-      <td class="bold">0.90%</td>
-      <td class="bold">0.90%</td>
-      <td class="bold">0.90%</td>
-      <td>You hold a Club Lloyds<br>
-        personal current account</td>
-    </tr>
-
-
-
-
-
-    <tr>
-      <td class="row1">04/10/16 – 25/09/17</td>
-      <td>£1+</td>
-      <td class="bold">0.55%</td>
-      <td class="bold">0.55%</td>
-      <td class="bold">0.55%</td>
-      <td>N/A</td>
-
-
-
-    </tr>
-
-    <tr class="row1">
-      <td rowspan="2" class="row1">31/08/18 – 01/10/18</td>
-      <td>£1+</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>N/A</td>
-    </tr>
-
-
-    <tr>
-      <td>£1+<br>Rate1</td>
-      <td class="bold">0.90%</td>
-      <td class="bold">0.90%</td>
-      <td class="bold">0.90%</td>
-      <td>You hold a Club Lloyds<br>
-        personal current account</td>
-    </tr>
-
-    <tr class="row1">
-      <td>04/10/16 – 25/09/17</td>
-      <td>£1+</td>
-      <td class="bold">0.80%</td>
-      <td class="bold">0.80%</td>
-      <td class="bold">0.80%</td>
-      <td>N/A</td>
-
-
-
-    </tr>
-    <tr>
-      <td rowspan="2" class="row1">31/08/18 – 01/10/18</td>
-      <td>£1+</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>N/A</td>
-    </tr>
-    <tr class="row1">
-      <td>£1+<br>Rate1</td>
-      <td class="bold">0.90%</td>
-      <td class="bold">0.90%</td>
-      <td class="bold">0.90%</td>
-      <td>You hold a Club Lloyds<br>
-        personal current account</td>
-    </tr>
-    <tr>
-      <td class="row1">04/10/16 – 25/09/17</td>
-      <td>£1+</td>
-      <td class="bold">0.55%</td>
-      <td class="bold">0.55%</td>
-      <td class="bold">0.55%</td>
-      <td>N/A</td>
-    </tr>
-    <tr class="row1">
-      <td rowspan="2">31/08/18 – 01/10/18</td>
-      <td>£1+</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-      <td>£1+<br>Rate1</td>
-      <td class="bold">0.90%</td>
-      <td class="bold">0.90%</td>
-      <td class="bold">0.90%</td>
-      <td>You hold a Club Lloyds<br>
-        personal current account</td>
-    </tr>
-
-    <tr class="row1">
-
-      <td>02/10/18 – 22/07/19</td>
-      <td>£1+</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>N/A</td>
-    </tr>
-
-    <tr>
-      <td class="row1">04/10/16 – 25/09/17</td>
-      <td>£1+</td>
-      <td class="bold">0.55%</td>
-      <td class="bold">0.55%</td>
-      <td class="bold">0.55%</td>
-      <td>N/A</td>
-    </tr>
-    <tr class="row1">
-      <td rowspan="2" class="row1">31/08/18 – 01/10/18</td>
-      <td>£1+</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-      <td>£1+<br>Rate1</td>
-      <td class="bold">0.90%</td>
-      <td class="bold">0.90%</td>
-      <td class="bold">0.90%</td>
-      <td>You hold a Club Lloyds<br>
-        personal current account</td>
-    </tr>
-
-    <tr class="row1">
-
-      <td>02/10/18 – 22/07/19</td>
-      <td>£1+</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-
-      <td class="row1">02/10/18 – 22/07/19</td>
-      <td>£1+</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td class="bold">0.65%</td>
-      <td>N/A</td>
-    </tr>-->
+      <ng-container *ngFor="let row2 of row.data; let i = index">
+        <tr *ngIf="i != 0">
+          <td>{{row2.balance}}</td>
+          <td class="bold">{{row2.TaxFreeAER}}</td>
+          <td class="bold">{{row2.TaxFree}}</td>
+          <td class="bold">{{row2.AER}}</td>
+          <td>{{row2.QualifyingCriteria}}</td>
+        </tr>
+      </ng-container>
+    </ng-container>
+    
   </table>
   <h6 class="desc"> You must have held the qualifying account for at least 7 days. We may remove preferential offers at
     any time. </h6>
@@ -713,7 +261,7 @@
     falls through and ask us to reinstate
     their accounts</h6>
 
-  <table>
+  <table class="table-striped2">
 
     <tr class="monthly-1">
       <th></th>
@@ -728,94 +276,72 @@
 
 
     </tr>
+    <ng-container *ngFor="let row of tableData.ISA">
+      <tr>
+        <td [attr.rowspan]="row.data.length">{{row.heading}}</td>
+        <td>{{row.data[0].balance}}</td>
+        <td class="bold">{{row.data[0].AER}}</td>
 
-    <tr >
-      <td rowspan="2" class="row1">08/12/20 – current</td>
-      <td>£1–£12,000</td>
-      <td class="bold">0.75%</td>
-    
+      </tr>
+
+      <ng-container *ngFor="let row2 of row.data; let i = index">
+        <tr *ngIf="i != 0" >
+          <td>{{row2.balance}}</td>
+          <td class="bold">{{row2.AER}}</td>
+
+        </tr>
+      </ng-container>
+    </ng-container>
+
+  </table>
+
+
+ 
+
+  <table  class="table-striped2">
+
+
+    <h5 class="p3">Junior Cash ISA</h5>
+    <tr class="monthly-1">
+      <th></th>
+      <th></th>
+      <th>Annual</th>
     </tr>
-    <tr class="row1">
-      <td>Any excess above £12,000</td>
-      <td class="bold">0.05%</td>
-   
+    <tr>
+      <th>Accounts opened between</th>
+      <th width="290px">Balance</th>
+      <th>Gross/AER</th>
+
+
+
     </tr>
+    <ng-container *ngFor="let row of tableData.Junior">
+      <tr>
+        <td [attr.rowspan]="row.data.length">{{row.data[0].heading}}</td>
+        <td>{{row.data[0].balance}}</td>
+        <td class="bold">{{row.data[0].AER}}</td>
+
+      </tr>
+
+      <ng-container *ngFor="let row2 of row.data; let i = index">
+        <tr *ngIf="i != 0">
+          <td>{{row2.balance}}</td>
+          <td class="bold">{{row2.AER}}</td>
+
+        </tr>
+      </ng-container>
+    </ng-container>
 
 
-    <tr >
-      <td rowspan="2" class="row1">14/10/20 – 07/12/20</td>
-      <td>£1–£12,000</td>
-      <td class="bold">0.95%</td>
-    
-    </tr>
-    <tr class="row1">
-      <td>Any excess above £12,000</td>
-      <td class="bold">0.05%</td>
-   
-    </tr>
-
-
-
-
-    
-    <tr >
-      <td class="row1">01/12/15 – 13/10/20</td>
-      <td>£1+</td>
-      <td class="bold">0.95%</td>
-    
-    </tr>
-
-</table><br><br>
-
-<table>
 
   
-  <h5 class="p3">Junior Cash ISA</h5>
-  <tr class="monthly-1">
-    <th></th>
-    <th></th>
-    <th>Annual</th>
-  </tr>
-  <tr>
-    <th>Accounts opened between</th>
-    <th width="290px">Balance</th>
-    <th>Gross/AER</th>
-
-
-
-  </tr>
-
-
-<tr>
-  <td class="row1">08/12/20 – current</td>
-  <td>£1+</td>
-  <td class="bold">1.50%</td>
-
-</tr>
-
-<tr class="row1">
-  <td >23/02/12 – 07/12/20</td>
-  <td>£1+</td>
-  <td class="bold">1.95%</td>
-
-</tr>
-
-
-
-
-
-
-
-
-
-</table>
+  </table>
 
 
   <br>
+  <table class="table-striped2">
 
-  <table>
-
-    <h5 class="p3 nowrap">Lend a Hand Fixed Savings  Account – 3 Year</h5>
+    <h5 class="p3 nowrap">Lend a Hand Fixed Savings Account – 3 Year</h5>
     <tr class="monthly-1">
       <th></th>
       <th></th>
@@ -832,21 +358,25 @@
 
     </tr>
 
-    <tr>
-      <td class="row1">29/10/20 – current</td> 
-      <td>£1+</td> 
-      <td class="bold">1.65%</td> 
-       <td rowspan="2" class="bold">This account is only<br>
-        available to support a <br>
-        Lend a Hand Mortgage</td> </tr>
-<tr class="row1">
+    <ng-container *ngFor="let row of tableData.Lend">
+      <tr>
+        <td>{{row.data[0].heading}}</td>
+        <td>{{row.data[0].balance}}</td>
+        <td class="bold">{{row.data[0].AER}}</td>
+        <td [attr.rowspan]="row.data.length">{{row.qualifyingcriteria}}</td>
+
+      </tr>
+
+      <ng-container *ngFor="let row2 of row.data; let i = index">
+        <tr *ngIf="i!=0">
+          <td>{{row2.heading}}</td>
+          <td>{{row2.balance}}</td>
+          <td class="bold">{{row2.AER}}</td>
 
 
-  <td>28/01/2019 – 28/10/20</td> 
-  <td >£1+</td> 
-  <td class="bold">2.50%</td> 
-  
-</tr>
+        </tr>
+      </ng-container>
+    </ng-container>
 
 
 
@@ -859,68 +389,39 @@
 
   </table>
 
-<br>
-<br>
 
 
-<h5 class="p3">Monthly Saver</h5> 
-<table>
-
-<tr class="monthly-1">
-  <th></th>
-  <th></th>
-  <th>Annual</th>
-
-</tr>
-<tr>
-  <th>Accounts opened between</th>
-  <th width="290px">Balance</th>
-  <th>Gross/AER</th>
- </tr>
- <tr>
+  <br>
+  <br>
 
 
-  <td  class="row1">21/07/20 – current</td> 
-  <td >£1+</td> 
-  <td class="bold">1.00%</td> 
-  
-</tr>
-<tr class="row1">
+  <h5 class="p3">Monthly Saver</h5>
+  <table class="table-striped2">
+
+    <tr class="monthly-1">
+      <th></th>
+      <th></th>
+      <th>Annual</th>
+
+    </tr>
+    <tr>
+      <th>Accounts opened between</th>
+      <th width="290px">Balance</th>
+      <th>Gross/AER</th>
+    </tr>
+    <tr *ngFor="let row of tableData.MonthlySaver">
 
 
-  <td  >27/05/20 – 20/07/20</td> 
-  <td >£1+</td> 
-  <td class="bold">1.50%</td> 
-  
-</tr>
-<tr>
+      <td >{{row.time}}</td>
+      <td>{{row.balance}}</td>
+      <td class="bold">{{row.AER}}</td>
 
-
-  <td  class="row1">30/10/18 – 26/05/20</td> 
-  <td >£1+</td> 
-  <td class="bold">2.00%</td> 
-  
-</tr>
-<tr class="row1">
-
-
-  <td  >01/12/17 – 29/10/18</td> 
-  <td >£1+</td> 
-  <td class="bold">2.50%</td> 
-  
-</tr>
-<tr>
-
-
-  <td  class="row1">10/12/13 – 30/11/17</td> 
-  <td >£1+</td> 
-  <td class="bold">2.00%</td> 
-  
-</tr>
-</table><br><br>
-
-<h5 class="p3">Online Fixed Bond – 2 Year</h5>
-<table>
+    </tr>
+  </table>
+ 
+<br><br>
+  <h5 class="p3">Online Fixed Bond – 2 Year</h5>
+  <table class="table-striped2">
 
     <tr class="monthly-1">
       <th></th>
@@ -930,18 +431,100 @@
     </tr>
     <tr>
       <th>Accounts opened between</th>
-      <th width="180px">Balance</th>
-      <th width="250px">Gross/AER</th>
-      <th width="">Qualifying Criteria</th>
+      <th width="200px" >Balance</th>
+      <th width="200px">Gross/AER</th>
+      <th >Qualifying Criteria</th>
 
 
 
     </tr>
 
 
+    <ng-container *ngFor="let row of tableData.FixedBond">
+      <tr>
+        <td [attr.rowspan]="row.data.length">{{row.heading}}</td>
+        <td>{{row.data[0].balance}}</td>
+        <td class="bold">{{row.data[0].AER}}</td>
+        <td >{{row.data[0].qualifyingcriteria}}</td>
+
+      </tr>
+
+      <ng-container *ngFor="let row2 of row.data; let i = index">
+        <tr *ngIf="i!=0">
+          <td>{{row2.balance}}</td>
+          <td class="bold">{{row2.AER}}</td>
+          <td >{{row2.qualifyingcriteria}}</td>
+
+
+        </tr>
+      </ng-container>
+    </ng-container>
 
 
 
-</table>
+
+  </table>
+  <br><br><br><br>
+
+
+  <p class="bold">AER</p>
+  <p>AER stands for Annual Equivalent Rate and illustrates what the interest rate would be if interest was paid and compounded once
+    each year.</p>
+    <p class="bold">Gross</p>
+    <p>Gross rate means we will not automatically deduct tax from the interest we pay on money in your account. It’s your responsibility
+      to pay any tax you may owe to HM Revenue & Customs (HMRC).</p>
+<p class="bold">Tax Free</p>
+<p>Tax Free is the contractual rate of interest payable where interest is exempt from income tax.</p>
+
+<br><br><br><br><br><br><br>
+
+<hr class="line1">
+<div class="container">
+<div class="row">
+<div class="col-sm-4">
+
+ <h5 class="p3">If you’d like this in another format such
+  as large print, Braille or audio CD please
+  contact us. If you have a hearing or speech
+  impairment you can contact us using
+  the Relay UK Service (available 24 hours
+  a day, 7 days a week) or via Textphone
+  on 0345 300 2281 (lines are open
+  24 hours a day, seven days a week). In
+  either case, calls are serviced by Relay UK.
+  SignVideo services are also available if
+  you’re Deaf and use British Sign Language:
+  lloydsbank.com/accessibility/signvideo</h5>
+
+</div>
+<div class="col-sm-6">
+
+
+ <h6 class="page-end">Eligible deposits with us are protected by the Financial Services Compensation
+Scheme (FSCS). We are covered by the Financial Ombudsman Service (FOS).
+Rates quoted are subject to change. Rates can change at any time and you should
+check the current interest rate before applying for the account.
+Calls and online sessions may be monitored and/or recorded for quality evaluation,
+training and to ensure compliance with laws and regulations. Not all Telephone
+Banking services are available 24 hours a day, 7 days a week. Please speak to an
+adviser for more information.
+Lloyds Bank plc. Registered Office: 25 Gresham Street, London EC2V 7HN.
+Registered in England and Wales no. 2065. Lloyds Bank plc is authorised by the
+Prudential Regulation Authority and regulated by the Financial Conduct Authority
+and the Prudential Regulation Authority under registration number 119278.
+Rates correct as of 8 December 2020.</h6>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+
 
 </section>

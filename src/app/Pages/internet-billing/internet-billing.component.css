@@ -126,15 +126,11 @@ width:250px;
 
   font-weight:bold;
  }
+
  .table-striped2 tr:nth-child(odd) {
    background: #c7d4e4;;
  }
- .table-striped2 > tr:nth-child(odd) table tr:nth-child(even) {
-  background: #fff;
-}
-.table-striped2 > tr:nth-child(even) table tr:nth-child(odd) {
-  background: #c7d4e4;
-}
+
  .table-striped2 tr:first-child {
    background: initial;
  }
@@ -163,4 +159,21 @@ width:250px;
  }
  .nowrap {
   white-space: nowrap ;
+}
+
+.no-border th{
+
+
+
+  border-top:none;
+}
+.margin-top th{
+
+
+  border-top:1px solid rgb(22, 19, 19);
+}
+.page-end{
+
+
+  color:rgb(85, 84, 84);
 }
